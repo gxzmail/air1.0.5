@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-9-25 17:21:13 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="sse.db.model.ExcutePlan" table="EXCUTEPLAN">
+        <id name="id" type="long">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="planId" type="java.lang.String">
+            <column name="PLANID" />
+        </property>
+        <property name="scriptId" type="java.lang.String">
+            <column name="SCRIPTID" />
+        </property>
+        <property name="version" type="int">
+            <column name="VERSION" />
+        </property>
+    </class>
+</hibernate-mapping>

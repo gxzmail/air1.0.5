@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-9-25 9:03:58 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="sse.db.model.TestPlan" table="TESTPLAN">
+  <id name="id" type="long">
+   <column name="ID"/>
+   <generator class="native"/>
+  </id>
+  <property generated="never" index="1" lazy="false" name="project" type="java.lang.String">
+   <column name="PROJECT"/>
+  </property>
+  <property generated="never" index="2" lazy="false" name="version" type="java.lang.String">
+   <column name="VERSION"/>
+  </property>
+  <property generated="never" index="3" lazy="false" name="planid" type="java.lang.String">
+   <column name="PLANID"/>
+  </property>
+  <property generated="never" index="4" lazy="false" name="status" type="java.lang.String">
+   <column name="STATUS"/>
+  </property>
+  <property generated="never" index="5" lazy="false" name="author" type="java.lang.String">
+   <column name="AUTHOR"/>
+  </property>
+  <property generated="never" index="6" insert="false" lazy="false"
+   name="creatTime" type="java.sql.Timestamp">
+   <column name="CREATTIME"/>
+  </property>
+  <property generated="never" index="7" lazy="false"
+   name="planStartDate" type="java.lang.String">
+   <column name="PLANSTARTDATE"/>
+  </property>
+  <property generated="never" index="8" lazy="false" name="planEndDate" type="java.lang.String">
+   <column name="PLANENDDATE"/>
+  </property>
+  <property generated="never" index="9" lazy="false"
+   name="milestoneDate" type="java.lang.String">
+   <column name="MILESTONEDATE"/>
+  </property>
+  <property generated="never" index="10" lazy="false"
+   name="latestUpdTime" type="java.lang.String">
+   <column name="LATESTUPDTIME"/>
+  </property>
+ </class>
+</hibernate-mapping>

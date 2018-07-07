@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-9-25 12:39:46 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="sse.db.model.Script" table="SCRIPT">
+		<id name="id" type="long">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="project" type="java.lang.String">
+			<column name="PROJECT" />
+		</property>
+		<property name="version" type="int">
+			<column name="VERSION" />
+		</property>
+		<property name="scriptId" type="java.lang.String">
+			<column name="SCRIPTID" />
+		</property>
+		<property name="scriptDesc" type="java.lang.String">
+			<column name="SCRIPTDESC" />
+		</property>
+		<property name="testContent" type="java.lang.String">
+			<column name="TESTCONTENT" />
+		</property>
+		<property name="testDate" type="java.lang.String">
+			<column name="TESTDATE" />
+		</property>
+		<property name="testPhase" type="java.lang.String">
+			<column name="TESTPHASE" />
+		</property>
+		<property name="testAntic" type="java.lang.String">
+			<column name="TESTANTIC" />
+		</property>
+		<property name="testHost" type="java.lang.String">
+			<column name="TESTHOST" />
+		</property>
+		<property name="testBatch" type="java.lang.String">
+			<column name="TESTBATCH" />
+		</property>
+		<property name="testStatus" type="java.lang.String">
+			<column name="TESTSTATUS" />
+		</property>
+		<property name="testPrior" type="java.lang.String">
+			<column name="TESTPRIOR" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="REMARK" />
+		</property>
+		<property name="scriptPath" type="java.lang.String">
+			<column name="SCRIPTPATH" />
+		</property>
+		<property name="scriptName" type="java.lang.String">
+			<column name="SCRIPTNAME" />
+		</property>
+		<property name="commitTime" type="java.sql.Timestamp" insert="false">
+			<column name="COMMITTIME" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

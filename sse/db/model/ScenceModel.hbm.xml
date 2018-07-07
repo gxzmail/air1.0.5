@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-9-25 10:58:33 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class dynamic-insert="true" name="sse.db.model.Scence"
+		table="SCENCE">
+		<id name="id" type="long">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property generated="never" lazy="false" name="version" type="int">
+			<column name="VERSION" />
+		</property>
+		<property generated="never" lazy="false" name="project"
+			type="java.lang.String">
+			<column name="Project" />
+		</property>
+		<property generated="never" lazy="false" name="scenceType"
+			type="java.lang.String">
+			<column name="SCENCETYPE" />
+		</property>
+		<property generated="never" lazy="false" name="scenceId"
+			type="java.lang.String">
+			<column name="SCENCEID" />
+		</property>
+		<property generated="never" lazy="false" name="caseId"
+			type="java.lang.String">
+			<column name="CASEID" />
+		</property>
+		<property generated="never" lazy="false" name="caseDesc"
+			type="java.lang.String">
+			<column name="CASEDESC" />
+		</property>
+		<property generated="never" lazy="false" name="testEnvr"
+			type="java.lang.String">
+			<column name="TESTENVR" />
+		</property>
+		<property generated="never" lazy="false" name="testDate"
+			type="java.lang.String">
+			<column name="TESTDATE" />
+		</property>
+		<property generated="never" lazy="false" name="testHost"
+			type="java.lang.String">
+			<column name="TESTHOST" />
+		</property>
+		<property generated="never" lazy="false" name="testLink"
+			type="java.lang.String">
+			<column name="TESTLINK" />
+		</property>
+		<property generated="never" lazy="false" name="testPrior"
+			type="java.lang.String">
+			<column name="TESTPRIOR" />
+		</property>
+		<property generated="never" lazy="false" name="testResult"
+			type="java.lang.String">
+			<column name="TESTRESULT" />
+		</property>
+		<property generated="never" lazy="false" name="scencePath"
+			type="java.lang.String">
+			<column name="SCENCEPATH" />
+		</property>
+		<property generated="never" lazy="false" name="scenceName"
+			type="java.lang.String">
+			<column name="SCENCENAME" />
+		</property>
+		<property generated="never" lazy="false" name="commitTime"
+			type="java.sql.Timestamp" insert="false">
+			<column name="COMMITTIME" />
+		</property>
+		<sql-insert check="param">insert into
+			Scence(version,project,scenceType,scenceId,caseId,caseDesc,testEnvr,testDate,testHost,testLink,testPrior,testResult,scencePath,scenceName)
+			values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)</sql-insert>
+	</class>
+</hibernate-mapping>
