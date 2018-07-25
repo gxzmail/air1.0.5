@@ -41,7 +41,7 @@ public class ExcelHndl {
 
 	/**
 	 * 函数说明： 静态实例 创建人: neusoft 创建日期: 2013-9-13 上午8:47:52 参数说明：
-	 * 
+	 *
 	 * @return ExcelHndl
 	 */
 	public static ExcelHndl getInstance() {
@@ -54,7 +54,7 @@ public class ExcelHndl {
 	/**
 	 * *********************************************************** 函数说明： TODO
 	 * 创建人: neusoft 创建日期: 2013-9-13 上午8:51:16 参数说明：
-	 * 
+	 *
 	 * @param workbook
 	 * @return HSSFCellStyle
 	 */
@@ -71,7 +71,7 @@ public class ExcelHndl {
 	/**
 	 * *********************************************************** 函数说明： TODO
 	 * 创建人: neusoft 创建日期: 2013-9-13 上午8:51:34 参数说明：
-	 * 
+	 *
 	 * @param workbook
 	 * @return HSSFCellStyle
 	 */
@@ -88,7 +88,7 @@ public class ExcelHndl {
 
 	/**
 	 * 把组织好的测试用例写入Excel
-	 * 
+	 *
 	 * @param row
 	 * @param step
 	 * @param cellStyle
@@ -155,7 +155,7 @@ public class ExcelHndl {
 
 	/**
 	 * 函数说明： 把步骤数组写入到执行手册中 函数输入 创建人: neusoft 创建日期: 2013-9-12 下午7:21:50 参数说明：
-	 * 
+	 *
 	 * @param sheetName
 	 * @param FilePath
 	 *            －－执行手册路径
@@ -225,7 +225,7 @@ public class ExcelHndl {
 
 	/**
 	 * 函数说明： TODO 创建人: neusoft 创建日期: 2013-9-13 上午8:47:09 参数说明：
-	 * 
+	 *
 	 * @param titleDesc
 	 * @param tile
 	 * @param fileName
@@ -251,7 +251,7 @@ public class ExcelHndl {
 
 	/**
 	 * 函数说明： TODO 创建人: neusoft 创建日期: 2013-9-13 上午8:49:43 参数说明：
-	 * 
+	 *
 	 * @param cell
 	 * @return String
 	 */
@@ -278,7 +278,7 @@ public class ExcelHndl {
 
 	/**
 	 * 函数说明： 获取所有执行用例 创建人: neusoft 创建日期: 2013-9-12 下午7:23:51 参数说明：
-	 * 
+	 *
 	 * @return Boolean
 	 */
 	public ArrayList<FrameworkCase> GetExcuteCase() {
@@ -366,13 +366,20 @@ public class ExcelHndl {
 						- Integer.valueOf(step2.getTestPrior());
 				if (tradeDate > 0)
 					return 1;
+				else if (tradeDate < 0)
+					return -1;
+
 				else if (tradeDate == 0) {
 					if (tradePhase > 0)
 						return 1;
+					else if (tradePhase < 0)
+						return -1;
+
 					else if (tradePhase == 0) {
 						if (casePriorty > 0)
 							return 1;
-
+						else if (casePriorty < 0)
+							return -1;
 						else if (casePriorty == 0)
 						// &&step1.getScriptId().compareTo(step2.
 						// getScriptId())>0)
@@ -399,10 +406,19 @@ public class ExcelHndl {
 											step2.getScriptId());
 							if (scenid1.compareTo(scenid2) > 0)
 								return 1;
-							else if (scenid1.compareTo(scenid2) == 0
-									&& (Integer.valueOf(stepid1) - Integer
-											.valueOf(stepid2)) > 0)
-								return 1;
+							else if (scenid1.compareTo(scenid2) < 0)
+								return -1;
+							else if (scenid1.compareTo(scenid2) == 0)
+							{
+								//***xzguo 不存在等于0的情况
+								return Integer.valueOf(stepid1) - Integer.valueOf(stepid2)
+										> 0 ? 1 : -1;
+							}
+
+//							else if (scenid1.compareTo(scenid2) == 0
+//									&& (Integer.valueOf(stepid1) - Integer
+//											.valueOf(stepid2)) > 0)
+//								return 1;
 
 						}
 
@@ -426,7 +442,7 @@ public class ExcelHndl {
 
 	/**
 	 * 函数功能：获取一列中的所有字段 函数输入：
-	 * 
+	 *
 	 * @param row
 	 *            －－xls表单中的一列 返回值： String[]
 	 */
@@ -446,7 +462,7 @@ public class ExcelHndl {
 
 	/**
 	 * 函数说明： TODO 创建人: neusoft 创建日期: 2013-9-12 下午7:23:42 参数说明：
-	 * 
+	 *
 	 * @return boolean
 	 */
 	public boolean hasCreat() {
@@ -455,7 +471,7 @@ public class ExcelHndl {
 
 	/*******************************************
 	 * 函数功能：判断没个用例是否在 用例列表数组中 输入：
-	 * 
+	 *
 	 * @param cc
 	 *            －－用判断的用例
 	 * @param filterStr
@@ -476,7 +492,7 @@ public class ExcelHndl {
 
 	/***************************************************************************
 	 * 函数功能：读取场景文件，获取需要的用例的详细信息 函数输入：
-	 * 
+	 *
 	 * @Param file －－场景文件
 	 * @param sheetName
 	 *            －－场景表单名
@@ -589,7 +605,7 @@ public class ExcelHndl {
 	/******************************************************************************/
 	/******************************************************************************
 	 * 函数功能: 从用例或框架文件中获取所有步骤 函数输入：
-	 * 
+	 *
 	 * @param String
 	 *            sheetNm －－脚本表单名称
 	 * @param File
@@ -696,7 +712,7 @@ public class ExcelHndl {
 	/**
 	 * *********************************************************** 函数说明： TODO
 	 * 创建人: neusoft 创建日期: 2013-9-13 上午9:11:19 参数说明：
-	 * 
+	 *
 	 * @param c
 	 * @param charLength
 	 * @return String
@@ -713,7 +729,7 @@ public class ExcelHndl {
 	/**
 	 * *********************************************************** 函数说明： TODO
 	 * 创建人: neusoft 创建日期: 2013-9-13 上午8:52:20 参数说明：
-	 * 
+	 *
 	 * @param titleDesc
 	 * @param dataRow
 	 * @return Hashtable<String,String>
