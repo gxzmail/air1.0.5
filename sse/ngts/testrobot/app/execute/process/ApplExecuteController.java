@@ -332,6 +332,11 @@ public class ApplExecuteController implements ISender, IReceiver
 
             /* 把日志定位到窗体 */
            // logger.addHandler(windowHandler);
+ /***xzguo
+  *framCase = genscript.GetExcuteCase();函数功能为完成AIR_ONXX_XXX_CV01.xls和框架用例装载,
+  * 将装载结果赋值给framCase;
+  *	
+ ***/
             framCase = genscript.GetExcuteCase();
             if (framCase == null || framCase.size() == 0 || !genscript.hasCreat())
             {

@@ -364,6 +364,8 @@ public class ExcelHndl {
 						- htradePhase.get(step2.getTestPhase()).intValue();
 				int casePriorty = Integer.valueOf(step1.getTestPrior())
 						- Integer.valueOf(step2.getTestPrior());
+
+/***SIR 3 begin***/
 				if (tradeDate > 0)
 					return 1;
 				else if (tradeDate < 0)
@@ -425,6 +427,7 @@ public class ExcelHndl {
 					}
 
 				}
+/***SIR 3 end***/
 				return 0;
 			}
 		});
